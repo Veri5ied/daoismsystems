@@ -1,0 +1,13 @@
+.home_container {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-height: 100vh;
+  margin-inline: auto;
+  h1 {
+    color: #000;
+  }
+}
