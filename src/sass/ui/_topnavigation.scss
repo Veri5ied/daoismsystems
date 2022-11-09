@@ -1,0 +1,14 @@
+.top-navigation__container {
+  display: grid;
+  gap: 0.7em;
+  .top-navigation__links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    a {
+      color: black;
+      text-decoration: none;
+    }
+  }
+}

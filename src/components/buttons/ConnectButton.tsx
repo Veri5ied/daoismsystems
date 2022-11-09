@@ -1,12 +1,13 @@
 interface ButtonProps {
   onClick: () => void;
   disabled: boolean;
+  buttonText: string;
 }
 
-const ConnectButton = ({ onClick, disabled }: ButtonProps) => {
+const ConnectButton = ({ onClick, disabled, buttonText }: ButtonProps) => {
   return (
     <button onClick={onClick} disabled={disabled}>
-      Connect Wallet
+      {buttonText}
     </button>
   );
 };
