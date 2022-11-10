@@ -1,0 +1,22 @@
+.general-component {
+  margin-top: 1em;
+
+  .general-component__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    input {
+      width: 600px;
+      height: 44px;
+      border-radius: 100px;
+      border: 1px solid gray;
+      margin-left: 1rem;
+      padding-left: 1rem;
+    }
+
+    #amount {
+      width: 200px;
+    }
+  }
+}
