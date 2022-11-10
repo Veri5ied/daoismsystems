@@ -7,11 +7,13 @@ const Profile = () => {
   const stakingBalance = useEtherBalance(STAKING_CONTRACT);
 
   return (
-    <div>
+    <div className="profile">
       <h1>Profile</h1>
-      <p>Wallet Address: {account}</p>
+      <p>
+        <span>Wallet Address:</span> {account}
+      </p>
       <p style={{ marginTop: "6px" }}>
-        Balance: {userBalance && formatEther(userBalance)} ETH
+        <span>Balance:</span> {userBalance && formatEther(userBalance)} ETH
       </p>
     </div>
   );

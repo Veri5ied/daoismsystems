@@ -22,9 +22,30 @@ const TopNavigation = () => {
         />
       </div>
       <div className="top-navigation__links">
-        <NavLink to="/profile">Profile</NavLink>
-        <NavLink to="/transfer">Transfer</NavLink>
-        <NavLink to="/mint">Mint</NavLink>
+        <NavLink
+          to="/profile"
+          style={({ isActive }) =>
+            isActive ? { color: "#037dd6" } : undefined
+          }
+        >
+          Profile
+        </NavLink>
+        <NavLink
+          to="/transfer"
+          style={({ isActive }) =>
+            isActive ? { color: "#037dd6" } : undefined
+          }
+        >
+          Transfer
+        </NavLink>
+        <NavLink
+          to="/mint"
+          style={({ isActive }) =>
+            isActive ? { color: "#037dd6" } : undefined
+          }
+        >
+          Mint
+        </NavLink>
       </div>
     </div>
   );
