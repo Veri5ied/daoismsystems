@@ -1,4 +1,4 @@
-import { useEthers, useEtherBalance, Rinkeby } from "@usedapp/core";
+import { useEthers, useEtherBalance } from "@usedapp/core";
 import { formatEther } from "@ethersproject/units";
 const Profile = () => {
   const { account } = useEthers();

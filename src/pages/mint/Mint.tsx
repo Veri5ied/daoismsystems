@@ -1,4 +1,5 @@
 import ConnectButton from "../../components/buttons/ConnectButton";
+import { useContractFunction } from "@usedapp/core";
 
 const Mint = () => {
   return (

@@ -19,6 +19,6 @@ This project makes use of useDapp for:
 
 ## Behavior noticed
 
-The getDefaultProvider() from ethers kept making multiple calls which can crash an application, so it was moved to a custom chains using infura
+The getDefaultProvider() from ethers kept making multiple calls which can crash an application, so it was moved to custom chains using infura
 
 ### Happy Hacking
