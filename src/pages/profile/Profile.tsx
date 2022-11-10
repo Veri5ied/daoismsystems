@@ -1,17 +1,14 @@
-import { useEthers, useEtherBalance } from "@usedapp/core";
+import { useEthers, useEtherBalance, Rinkeby } from "@usedapp/core";
 import { formatEther } from "@ethersproject/units";
 const Profile = () => {
   const { account } = useEthers();
-  const etherBalance = useEtherBalance(account);
+  const rinkebyBalance = useEtherBalance(account, { chainId: Rinkeby.chainId });
+
   return (
     <div>
       <h1>Profile</h1>
       <p>Wallet Address: {account}</p>
-      <p>
-        Balance:{" "}
-        {etherBalance ? parseFloat(formatEther(etherBalance)).toFixed(5) : 0}{" "}
-        ETH
-      </p>
+      <p>Balance: {rinkebyBalance && formatEther(rinkebyBalance)} ETH</p>
     </div>
   );
 };

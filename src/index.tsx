@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import "./sass/main.scss";
@@ -6,7 +6,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { getDefaultProvider } from "ethers";
-import { Mainnet, Config, Kovan, DAppProvider, Rinkeby } from "@usedapp/core";
+import { Config, Kovan, DAppProvider, Rinkeby, Goerli } from "@usedapp/core";
 
 const config: Config = {
   networks: [Rinkeby],
@@ -14,6 +14,7 @@ const config: Config = {
   readOnlyUrls: {
     [Kovan.chainId]: getDefaultProvider("kovan"),
     [Rinkeby.chainId]: getDefaultProvider("rinkeby"),
+    [Goerli.chainId]: getDefaultProvider("goerli"),
   },
   notifications: {
     expirationPeriod: 1000,
