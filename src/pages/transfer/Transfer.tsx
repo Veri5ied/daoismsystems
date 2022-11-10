@@ -15,6 +15,7 @@ const formatBalance = (balance: BigNumber | undefined) =>
 const Transfer = () => {
   const [address, setAddress] = useState("");
   const [amount, setAmount] = useState<any>(1);
+  const [isOk, setIsOk] = useState(false);
   const { sendTransaction, state } = useSendTransaction({
     transactionName: "Send Ethereum",
   });
@@ -27,6 +28,9 @@ const Transfer = () => {
     if (state.status !== "Mining") {
       setAmount("0");
       setAddress("");
+      setIsOk(false);
+    } else {
+      setIsOk(true);
     }
   }, [state]);
 
@@ -57,6 +61,9 @@ const Transfer = () => {
           </div>
           <p style={{ color: "red" }}>
             {state.errorMessage && state.errorMessage}
+          </p>
+          <p style={{ color: "green" }}>
+            {isOk && "Transaction is successful"}
           </p>
           <div className="general-component__form__input">
             <ConnectButton
