@@ -22,7 +22,15 @@ const Mint = () => {
   } as any);
 
   const mintToken = () => {
-    void send(address, ethers.utils.parseEther(String(amount)));
+    if (!address) {
+      addToast("Please enter an address", {
+        appearance: "error",
+        autoDismiss: true,
+      });
+      return;
+    } else {
+      void send(address, ethers.utils.parseEther(String(amount)));
+    }
   };
 
   useEffect(() => {

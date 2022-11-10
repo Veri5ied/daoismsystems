@@ -15,7 +15,15 @@ const Transfer = () => {
   });
 
   const sendToken = () => {
-    void sendTransaction({ to: address, value: utils.parseEther(amount) });
+    if (!address) {
+      addToast("Please enter an address", {
+        appearance: "error",
+        autoDismiss: true,
+      });
+      return;
+    } else {
+      void sendTransaction({ to: address, value: utils.parseEther(amount) });
+    }
   };
 
   useEffect(() => {
