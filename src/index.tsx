@@ -5,16 +5,15 @@ import "./sass/main.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-import { getDefaultProvider } from "ethers";
-import { Config, Kovan, DAppProvider, Rinkeby, Goerli } from "@usedapp/core";
+import { Config, Mainnet, DAppProvider, Goerli } from "@usedapp/core";
 
 const config: Config = {
-  networks: [Rinkeby],
-  readOnlyChainId: Rinkeby.chainId,
+  readOnlyChainId: Mainnet.chainId,
   readOnlyUrls: {
-    [Kovan.chainId]: getDefaultProvider("kovan"),
-    [Rinkeby.chainId]: getDefaultProvider("rinkeby"),
-    [Goerli.chainId]: getDefaultProvider("goerli"),
+    [Mainnet.chainId]:
+      "https://mainnet.infura.io/v3/b61a50c12adb4672a87618354e30b897",
+    [Goerli.chainId]:
+      "https://goerli.infura.io/v3/b61a50c12adb4672a87618354e30b897",
   },
   notifications: {
     expirationPeriod: 1000,
@@ -35,7 +34,4 @@ root.render(
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
