@@ -6,6 +6,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { Config, Mainnet, DAppProvider, Goerli } from "@usedapp/core";
+import { ToastProvider } from "react-toast-notifications";
 
 const config: Config = {
   readOnlyChainId: Mainnet.chainId,
@@ -27,9 +28,11 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <DAppProvider config={config}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <ToastProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ToastProvider>
     </DAppProvider>
   </React.StrictMode>
 );

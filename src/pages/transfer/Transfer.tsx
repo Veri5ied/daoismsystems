@@ -3,11 +3,13 @@ import { useEffect } from "react";
 import { useSendTransaction } from "@usedapp/core";
 import { useState } from "react";
 import { utils } from "ethers";
+import { useToasts } from "react-toast-notifications";
 
 const Transfer = () => {
   const [address, setAddress] = useState("");
   const [amount, setAmount] = useState<any>(1);
   const [isOk, setIsOk] = useState(false);
+  const { addToast } = useToasts();
   const { sendTransaction, state } = useSendTransaction({
     transactionName: "Send Ethereum",
   });
@@ -23,6 +25,10 @@ const Transfer = () => {
       setIsOk(false);
     } else {
       setIsOk(true);
+      addToast("Transaction Successful", {
+        appearance: "success",
+        autoDismiss: true,
+      });
     }
   }, [state]);
 

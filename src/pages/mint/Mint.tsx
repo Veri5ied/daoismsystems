@@ -4,6 +4,7 @@ import { ethers } from "ethers";
 import { useContractFunction } from "@usedapp/core";
 import { Contract } from "@ethersproject/contracts";
 import WAFFLETOKEN_ABI from "../../utils/waffle-token.abi.json";
+import { useToasts } from "react-toast-notifications";
 
 const contractInt = new ethers.utils.Interface(WAFFLETOKEN_ABI);
 const contract = new Contract(
@@ -14,6 +15,7 @@ const Mint = () => {
   const [address, setAddress] = useState("");
   const [amount, setAmount] = useState<any>(1);
   const [isOk, setIsOk] = useState(false);
+  const { addToast } = useToasts();
   const { state, send } = useContractFunction(contract, "mint", {
     receiver: address,
     amount: amount,
@@ -30,6 +32,10 @@ const Mint = () => {
       setIsOk(false);
     } else {
       setIsOk(true);
+      addToast("Transaction Successful", {
+        appearance: "success",
+        autoDismiss: true,
+      });
     }
   }, [state]);
 
