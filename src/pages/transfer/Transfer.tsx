@@ -2,15 +2,7 @@ import ConnectButton from "../../components/buttons/ConnectButton";
 import { useEffect } from "react";
 import { useSendTransaction } from "@usedapp/core";
 import { useState } from "react";
-import { utils, BigNumber } from "ethers";
-import { formatEther } from "@ethersproject/units";
-
-const formatter = new Intl.NumberFormat("en-us", {
-  minimumFractionDigits: 4,
-  maximumFractionDigits: 4,
-});
-const formatBalance = (balance: BigNumber | undefined) =>
-  formatter.format(parseFloat(formatEther(balance ?? BigNumber.from("0"))));
+import { utils } from "ethers";
 
 const Transfer = () => {
   const [address, setAddress] = useState("");

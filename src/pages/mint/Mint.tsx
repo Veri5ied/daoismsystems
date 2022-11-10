@@ -32,6 +32,8 @@ const Mint = () => {
       setIsOk(true);
     }
   }, [state]);
+
+  console.log(state);
   return (
     <div>
       <h1>Mint</h1>
